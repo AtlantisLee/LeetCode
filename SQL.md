@@ -1,15 +1,20 @@
-_175._
-`SELECT
+175.
+
+```mysql
+SELECT
 	p.FirstName,
 	p.LastName,
 	a.City,
 	a.State
 FROM
 	Person p
-LEFT JOIN Address a ON p.PersonId = a.PersonId;`
+LEFT JOIN Address a ON p.PersonId = a.PersonId;
+```
 
-_176._
-`SELECT
+176.
+
+```mysql
+SELECT
 	(
 		SELECT DISTINCT
 			Salary
@@ -19,21 +24,50 @@ _176._
 			Salary DESC
 		LIMIT 1,
 		1
-	) AS SecondHighestSalary;`
+	) SecondHighestSalary;
+```
 
-_181._
-`SELECT
-	name AS employee
+181.
+
+```mysql
+SELECT
+	e1. NAME Employee
 FROM
-	(
-		SELECT
-			e1.Name ,
-			e1.Salary,
-			e2.Name AS mname,
-			e2.Salary AS msalary
-		FROM
-			employee e1
-		LEFT JOIN employee e2 ON e1.ManagerId = e2.Id
-	) e
+	Employee e1
+LEFT JOIN Employee e2 ON e1.ManagerId = e2.Id
 WHERE
-	salary > msalary;`
+	e1.Salary > e2.salary;
+```
+
+182.
+
+```mysql
+SELECT
+	Email
+FROM
+	Person
+GROUP BY
+	Email
+HAVING
+	count(Email) > 1;
+```
+
+183.
+
+```mysql
+SELECT
+	c. NAME Customers
+FROM
+	Orders o
+RIGHT JOIN Customers c ON o.CustomerId = c.Id
+WHERE
+	o.CustomerId IS NULL;
+	
+SELECT
+	c.Name Customers
+FROM
+	Customers c
+WHERE
+	c.Id NOT IN (SELECT CustomerId FROM Orders);
+```
+
