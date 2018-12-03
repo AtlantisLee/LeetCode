@@ -71,3 +71,13 @@ WHERE
 	c.Id NOT IN (SELECT CustomerId FROM Orders);
 ```
 
+627.
+```mysql
+UPDATE salary
+SET sex = CASE sex
+WHEN 'm' THEN
+	'f'
+ELSE
+	'm'
+END;
+```
