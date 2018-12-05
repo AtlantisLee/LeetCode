@@ -71,7 +71,34 @@ WHERE
 	c.Id NOT IN (SELECT CustomerId FROM Orders);
 ```
 
+196.
+
+```mysql
+DELETE p1
+FROM
+	Person p1,
+	Person p2
+WHERE
+	p1.Email = p2.Email
+AND p1.Id > p2.Id
+```
+
+620.
+
+```mysql
+SELECT
+	*
+FROM
+	cinema
+WHERE
+	id % 2 = 1
+AND description <> 'boring'
+ORDER BY
+	rating DESC;
+```
+
 627.
+
 ```mysql
 UPDATE salary
 SET sex = CASE sex
