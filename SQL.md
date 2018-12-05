@@ -97,6 +97,49 @@ ORDER BY
 	rating DESC;
 ```
 
+197.
+
+```mysql
+SELECT
+	t2.Id Id
+FROM
+	Weather t1,
+	Weather t2
+WHERE
+	DATEDIFF(
+		t2.RecordDate,
+		t1.RecordDate
+	) = 1
+AND t2.Temperature > t1.Temperature;
+```
+
+595.
+
+```mysql
+SELECT
+	NAME,
+	population,
+	area
+FROM
+	World
+WHERE
+	area > 3000000
+OR population > 25000000;
+```
+
+596.
+
+```mysql
+SELECT
+	class
+FROM
+	courses
+GROUP BY
+	class
+HAVING
+	count(DISTINCT student) > 4;
+```
+
 627.
 
 ```mysql
