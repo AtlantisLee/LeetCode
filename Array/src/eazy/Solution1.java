@@ -1,5 +1,6 @@
 package eazy;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -51,6 +52,9 @@ public class Solution1 {
     public static void main(String[] args) {
         int[] nums = {2, 7, 9, 11};
         int target = 9;
-        System.out.println(new Solution1().twoSum01(nums, target));
+        System.out.println(Arrays.toString(new Solution1().twoSum01(nums, target)));
+        System.out.println(Arrays.toString(new Solution1().twoSum02(nums, target)));
+        System.out.println(Arrays.toString(new Solution1().twoSum03(nums, target)));
+
     }
 }
